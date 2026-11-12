@@ -1,0 +1,27 @@
+/* Punto de entrada de estilos: importa todos los archivos CSS en orden de cascada. */
+
+/* Base */
+@import url("base/variables.css");
+@import url("base/reset.css");
+@import url("base/tipografia.css");
+
+/* Componentes */
+@import url("componentes/botones.css");
+@import url("componentes/tarjetas.css");
+@import url("componentes/formularios.css");
+@import url("componentes/factura.css");
+@import url("componentes/carrito.css");
+@import url("componentes/modal-sesion.css");
+
+/* Secciones y vistas */
+@import url("secciones/encabezado.css");
+@import url("secciones/hero.css");
+@import url("secciones/servicios.css");
+@import url("secciones/servicio-detalle.css");
+@import url("secciones/mision.css");
+@import url("secciones/cotizador.css");
+@import url("secciones/admin.css");
+@import url("secciones/proceso.css");
+@import url("secciones/preguntas.css");
+@import url("secciones/contacto.css");
+@import url("secciones/pie.css");

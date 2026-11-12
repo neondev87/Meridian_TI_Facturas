@@ -1,0 +1,10 @@
+/* Sección "Cómo trabajamos": pasos numerados en rejilla adaptable. */
+.steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:0;margin:2rem 0 0}
+.steps li{counter-increment:s;border-top:1px solid var(--gold);padding-top:1rem}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:500 1.8rem Newsreader,serif;color:var(--gold)}
+.steps p{color:var(--muted);margin:0}
+
+@media(max-width:900px){
+ .steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}

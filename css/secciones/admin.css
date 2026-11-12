@@ -1,0 +1,4 @@
+/* Vista de administrador: tabla de usuarios registrados. */
+#admin-usuarios .tabla{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r)}
+#admin-usuarios td{color:var(--muted)}
+#admin-usuarios td:first-child{color:var(--ink);font-weight:500}

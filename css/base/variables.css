@@ -1,0 +1,18 @@
+/* Variables globales de diseño: tema negro elegante con acento dorado, medidas y radios. */
+:root{
+ color-scheme:dark;
+ /* Fondos (sin blanco puro) */
+ --bg:#0a0a0a; --bg-2:#111111; --bg-3:#171717; --bg-4:#1f1f1f;
+ /* Texto */
+ --ink:#ece7dc; --muted:#a39e94; --tenue:#77736c;
+ /* Bordes finos */
+ --line:#262626; --line-2:#383838;
+ /* Dorado (se conserva el original) */
+ --gold:#b8892b; --gold-2:#d0a144; --gold-tenue:rgba(184,137,43,.12); --on-gold:#0a0a0a;
+ /* Estados */
+ --danger:#ec8a80; --ok:#93c79f;
+ --sombra:0 24px 60px -30px rgba(0,0,0,.95);
+ --velo:rgba(5,5,5,.62);
+ /* Medidas */
+ --r:6px; --alto-barra:68px;
+}

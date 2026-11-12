@@ -1,0 +1,45 @@
+/* Documento de factura: ejemplo del hero, factura generada, sus acciones y versión de impresión en blanco y negro. */
+
+/* Factura de ejemplo (hero) */
+.invoice{position:relative;background:var(--bg-3);border:1px solid var(--line-2);border-radius:var(--r);padding:1.6rem;box-shadow:var(--sombra);transform:rotate(1.2deg);animation:rise .8s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(24px) rotate(1.2deg)}to{opacity:1;transform:rotate(1.2deg)}}
+.inv-head{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--gold);padding-bottom:.7rem;margin-bottom:.6rem}
+.inv-head strong,.inv-head h2{font:500 1.35rem Newsreader,serif;margin:0}
+.inv-head span{color:var(--muted);font-size:.9rem;text-align:right}
+.invoice table{width:100%;border-collapse:collapse;font-size:.95rem}
+.invoice td{padding:.5rem 0;border-bottom:1px solid var(--line)}
+.invoice td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.invoice .sub td{color:var(--muted)}
+.invoice .tot td{font-weight:600;font-size:1.1rem;border-bottom:0;border-top:1px solid var(--gold);color:var(--gold-2)}
+.stamp{position:absolute;right:1.2rem;bottom:.9rem;border:2px solid var(--gold);color:var(--gold);padding:.25rem .8rem;border-radius:4px;font-weight:600;transform:rotate(-8deg);background:rgba(10,10,10,.85)}
+.inv-note{margin:1.2rem 10rem 0 0;font-size:.8rem;color:var(--tenue)}
+
+/* Factura generada */
+.doc{background:var(--bg-3);border:1px solid var(--line-2);border-top:2px solid var(--gold);border-radius:var(--r);padding:1.6rem}
+.doc .inv-head{align-items:flex-start}
+.doc .meta{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;font-size:.92rem;color:var(--muted)}
+.doc .meta strong{color:var(--ink)}
+.doc .meta p{margin:0;overflow-wrap:anywhere}
+.doc table,.tabla-conceptos{width:100%;border-collapse:collapse;font-size:.92rem}
+.doc th{text-align:left;border-bottom:1px solid var(--line-2);padding:.45rem 0;color:var(--muted);font-weight:600}
+.doc th:nth-child(n+2),.doc td:nth-child(n+2),.tabla-conceptos th:nth-child(n+2),.tabla-conceptos td:nth-child(n+2){text-align:right;font-variant-numeric:tabular-nums}
+.doc td{padding:.5rem 0;border-bottom:1px solid var(--line)}
+.doc tfoot td,.tabla-conceptos tfoot td{color:var(--muted)}
+.doc .tot td,.tabla-conceptos .tot td{font-weight:600;color:var(--gold-2);border-top:1px solid var(--gold);border-bottom:0;font-size:1.05rem}
+.doc-vacio,.doc-mensaje{font-size:.95rem;margin:1rem 0 0}
+.doc .legal{font-size:.78rem;color:var(--tenue);margin-top:1.2rem}
+.doc-actions{margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap}
+
+@media(max-width:520px){.doc .meta{grid-template-columns:1fr}}
+
+/* Impresión: solo la factura, en blanco y negro legible */
+@media print{
+ body{background:#fff!important}
+ body *{visibility:hidden}
+ #fdoc,#fdoc *{visibility:visible;color:#000!important;background:transparent!important;box-shadow:none!important}
+ #fdoc{position:absolute;left:0;top:0;width:100%;border:0!important;padding:0;font-size:12pt}
+ #fdoc .inv-head,#fdoc .tot td{border-color:#000!important}
+ #fdoc th{border-bottom:1px solid #000!important}
+ #fdoc td{border-bottom:1px solid #999!important}
+ .modal-sesion{display:none!important}
+}

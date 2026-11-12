@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!-- Página principal de Meridian TI: vistas (inicio, servicio, misión, facturación, admin), carrito y modal de sesión. -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Meridian TI | Servicios de TI con factura incluida</title>
+    <meta name="description" content="Soporte y mantenimiento, redes, ciberseguridad y sitios web para empresas. Todos los servicios incluyen factura.">
+    <link rel="icon" href="assets/iconos/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap bar">
+        <a class="brand" href="#inicio">Meridian<span>TI</span></a>
+        <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">Menú</button>
+        <nav id="menu" class="menu" aria-label="Principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#mision">Misión y visión</a>
+          <a href="#proceso">Cómo trabajamos</a>
+          <a href="#contacto">Cotizar</a>
+          <a href="#preguntas">Preguntas</a>
+          <a href="#admin" data-solo-admin hidden>Usuarios</a>
+          <a class="btn btn-sm" href="#cotizador">Facturación</a>
+          <div class="usuario-barra" id="usuario-barra" hidden>
+            <span class="usuario-nombre" id="usuario-nombre"></span>
+            <span class="etiqueta-admin" id="etiqueta-admin" hidden>Admin</span>
+            <button class="btn btn-line btn-sm" type="button" id="cerrar-sesion">Cerrar sesión</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- ===== Vista: inicio ===== -->
+      <div class="vista" data-vista="inicio" id="vista-inicio">
+        <section class="hero">
+          <div class="wrap hero-grid">
+            <div>
+              <p class="eyebrow">Tecnología precisa, respaldo que se factura.</p>
+              <h1 tabindex="-1" data-foco>Tecnología que funciona y un comprobante fiscal en cada servicio</h1>
+              <p class="lead">Atendemos a empresas y profesionistas con soporte técnico, redes, ciberseguridad y desarrollo web. Cada trabajo termina con su factura, sin trámites extra.</p>
+              <div class="actions">
+                <a class="btn" href="#servicios">Ver servicios</a>
+                <a class="btn btn-line" href="#mision">Misión y visión</a>
+              </div>
+            </div>
+            <aside class="invoice" aria-label="Ejemplo de factura">
+              <div class="inv-head"><strong>Factura</strong><span>Folio A-0001</span></div>
+              <table>
+                <tr><td>Mantenimiento preventivo completo</td><td>$900.00</td></tr>
+                <tr><td>Diagnóstico de red</td><td>$1,200.00</td></tr>
+                <tr><td>Paquete web Básico</td><td>$8,900.00</td></tr>
+                <tr class="sub"><td>Subtotal</td><td>$11,000.00</td></tr>
+                <tr class="sub"><td>IVA 16%</td><td>$1,760.00</td></tr>
+                <tr class="tot"><td>Total</td><td>$12,760.00</td></tr>
+              </table>
+              <div class="stamp">Factura incluida</div>
+              <p class="inv-note">Ejemplo ilustrativo de cómo recibes tu comprobante.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section id="servicios" class="sec">
+          <div class="wrap">
+            <h2>Cuatro áreas, una sola forma de trabajar</h2>
+            <p class="sub-h">Elige un área para ver sus servicios, precios y agregarlos a tu carrito.</p>
+            <div class="cards" id="tarjetas-servicios"></div>
+          </div>
+        </section>
+
+        <section id="proceso" class="sec alt">
+          <div class="wrap">
+            <h2>Cómo trabajamos</h2>
+            <ol class="steps">
+              <li><h3>Nos cuentas qué necesitas</h3><p>Por formulario, correo o WhatsApp. Respondemos el mismo día hábil.</p></li>
+              <li><h3>Recibes tu cotización</h3><p>Alcance, tiempos y precio final por escrito, antes de empezar.</p></li>
+              <li><h3>Realizamos el trabajo</h3><p>Con avances claros y entrega documentada.</p></li>
+              <li><h3>Te entregamos tu factura</h3><p>Se envía por correo al cerrar el servicio.</p></li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Formulario unificado de cotización/factura, centrado (penúltimo bloque) -->
+        <section id="contacto" class="sec contact">
+          <div class="wrap contacto-centro">
+            <div class="contacto-intro">
+              <h2>Pide tu cotización</h2>
+              <p>Cuéntanos qué necesitas. Si ya tienes servicios en tu carrito, aquí mismo generas tu factura.</p>
+              <p class="data">contacto@meridianti.example · Lunes a viernes, 9:00 a 18:00</p>
+            </div>
+            <div class="ranura-formulario" data-ranura="inicio">
+              <div id="bloque-formulario">
+                <form id="form-factura" novalidate>
+                  <h3>Tus datos</h3>
+                  <div class="form-resumen" id="form-resumen" aria-live="polite"></div>
+                  <label>Nombre o razón social<input name="nombre" required autocomplete="name"></label>
+                  <label>Correo<input name="correo" type="email" required autocomplete="email"></label>
+                  <label>WhatsApp (con lada de país)<input name="whatsapp" type="tel" required autocomplete="tel" placeholder="528112345678"></label>
+                  <label><span>RFC <span class="opcional">(opcional)</span></span><input name="rfc" autocomplete="off" maxlength="13"></label>
+                  <label>Mensaje<textarea name="mensaje" rows="4"></textarea></label>
+                  <p class="err" id="ferr" role="alert"></p>
+                  <button class="btn" type="submit">Generar factura</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Al final: "La factura va incluida" y preguntas frecuentes, lado a lado -->
+        <section id="factura" class="sec alt">
+          <div class="wrap split cierre">
+            <div>
+              <h2>La factura va incluida, siempre</h2>
+              <p>Trabajar con comprobante fiscal te permite deducir el gasto y llevar tu contabilidad en orden. No cobramos extra por facturar.</p>
+              <ul class="checks">
+                <li>Factura electrónica enviada por correo</li>
+                <li>Desglose de cada servicio e impuestos</li>
+                <li>Facturamos a persona física o empresa</li>
+                <li>Solo necesitamos tus datos fiscales al cotizar</li>
+              </ul>
+            </div>
+            <div id="preguntas">
+              <h2>Preguntas frecuentes</h2>
+              <details><summary>¿Los precios incluyen la factura?</summary><p>Sí. El costo de emitir la factura no se cobra aparte. Los precios se muestran antes de IVA y el 16 % aparece desglosado en el documento.</p></details>
+              <details><summary>¿Cuándo recibo mi factura?</summary><p>Al finalizar el servicio, una vez confirmados tus datos fiscales.</p></details>
+              <details><summary>¿Atienden de forma remota?</summary><p>Sí, el soporte puede ser remoto o presencial según el caso.</p></details>
+              <details><summary>¿Ofrecen garantía?</summary><p>Cada cotización indica el periodo de garantía del trabajo realizado.</p></details>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===== Vista: detalle de un servicio ===== -->
+      <div class="vista" data-vista="servicio" id="vista-servicio" hidden>
+        <section class="sec">
+          <div class="wrap">
+            <div class="vista-barra">
+              <a class="link" href="#servicios">← Todos los servicios</a>
+              <button class="carrito-boton" type="button" id="carrito-boton" aria-controls="carrito-panel" aria-expanded="false">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M3 4h2l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 8H6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="20" r="1.3" fill="currentColor"/><circle cx="17" cy="20" r="1.3" fill="currentColor"/></svg>
+                <span>Carrito</span>
+                <span class="contador" data-carrito-contador>0</span>
+              </button>
+            </div>
+            <div class="servicio-layout">
+              <div id="servicio-detalle"></div>
+              <aside class="carrito-panel" id="carrito-panel" aria-labelledby="carrito-titulo">
+                <div class="carrito-cabeza">
+                  <h2 id="carrito-titulo" tabindex="-1">Tu carrito</h2>
+                  <button class="carrito-cerrar" type="button" id="carrito-cerrar" aria-label="Cerrar carrito">✕</button>
+                </div>
+                <ul class="carrito-lista" id="carrito-lista"></ul>
+                <p class="carrito-vacio" id="carrito-vacio">Aún no agregas servicios.</p>
+                <p class="err" id="carrito-error" role="alert"></p>
+                <dl class="carrito-totales">
+                  <div><dt>Subtotal</dt><dd id="carrito-subtotal">$0.00</dd></div>
+                  <div><dt>IVA 16%</dt><dd id="carrito-iva">$0.00</dd></div>
+                  <div class="total"><dt>Total</dt><dd id="carrito-total">$0.00</dd></div>
+                </dl>
+                <button class="btn" type="button" id="carrito-finalizar">Finalizar y facturar</button>
+              </aside>
+            </div>
+          </div>
+        </section>
+        <div class="carrito-fondo" id="carrito-fondo" hidden></div>
+      </div>
+
+      <!-- ===== Vista: misión y visión ===== -->
+      <div class="vista" data-vista="mision" id="vista-mision" hidden>
+        <section class="sec">
+          <div class="wrap">
+            <a class="link" href="#inicio">← Volver al inicio</a>
+            <div class="mision-cabeza">
+              <div>
+                <p class="eyebrow">Misión y visión</p>
+                <h1 tabindex="-1" data-foco>Tecnología precisa, respaldo que se factura.</h1>
+                <p class="lead">Somos un equipo de TI de Monterrey que trabaja con alcance por escrito, precios claros y comprobante fiscal en cada servicio.</p>
+              </div>
+              <img src="assets/img/mision-vision.svg" alt="" width="240" height="160">
+            </div>
+            <div class="mision-grid">
+              <article class="mision-bloque">
+                <h2>Misión</h2>
+                <p>Brindar a empresas y profesionistas de Monterrey y su área metropolitana servicios de tecnología confiables —soporte, redes, ciberseguridad y desarrollo web— con precios claros, alcance por escrito y factura en cada trabajo.</p>
+              </article>
+              <article class="mision-bloque">
+                <h2>Visión</h2>
+                <p>Ser, en 2030, el aliado tecnológico de referencia para las empresas del noreste de México, reconocido por su precisión técnica, su trato honesto y su respaldo documentado.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="sec alt">
+          <div class="wrap">
+            <h2>Empresas con las que hemos trabajado</h2>
+            <p class="sub-h">Organizaciones de Monterrey que confían su operación tecnológica en Meridian TI.</p>
+            <ul class="empresas" id="empresas" aria-live="polite"></ul>
+            <p class="nota-ficticia">Nombres de empresas ficticios, usados como ejemplo en un proyecto escolar.</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===== Vista: facturación ===== -->
+      <div class="vista" data-vista="cotizador" id="vista-cotizador" hidden>
+        <section class="sec">
+          <div class="wrap">
+            <a class="link" href="#servicios">← Seguir agregando servicios</a>
+            <h1 tabindex="-1" data-foco class="titulo-vista">Facturación</h1>
+            <p class="sub-h">Revisa los servicios de tu carrito, confirma tus datos y genera tu factura.</p>
+            <div class="split">
+              <div>
+                <h2>Servicios en tu carrito</h2>
+                <div id="factura-conceptos" aria-live="polite"></div>
+              </div>
+              <div class="ranura-formulario" data-ranura="cotizador"></div>
+            </div>
+            <div id="resultado" class="resultado" aria-live="polite">
+              <p class="ph">Tu factura aparecerá aquí.</p>
+            </div>
+            <section class="mis-facturas" aria-labelledby="mis-facturas-titulo">
+              <h2 id="mis-facturas-titulo">Tus facturas</h2>
+              <div id="mis-facturas"></div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===== Vista: administrador ===== -->
+      <div class="vista" data-vista="admin" id="vista-admin" hidden>
+        <section class="sec">
+          <div class="wrap">
+            <h1 tabindex="-1" data-foco class="titulo-vista">Usuarios registrados</h1>
+            <p class="sub-h">Solo el administrador ve esta lista. Las contraseñas y respuestas de recuperación nunca se muestran.</p>
+            <div class="tabla-scroll" id="admin-usuarios"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap foot">
+        <span>© <span id="anio"></span> Meridian TI. Todos los derechos reservados.</span>
+        <a href="#inicio">Volver arriba</a>
+      </div>
+    </footer>
+
+    <p class="sr-only" id="aviso-global" role="status" aria-live="polite"></p>
+
+    <!-- Aviso cuando el servidor o la base de datos no responden (lo muestra js/modulos/api.js) -->
+    <div class="aviso-servidor" id="aviso-servidor" role="alert" hidden>
+      <span></span>
+      <button class="btn btn-line btn-sm" type="button">Cerrar</button>
+    </div>
+
+    <!-- ===== Modal de registro e inicio de sesión ===== -->
+    <div class="modal-sesion" id="modal-sesion" hidden>
+      <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-describedby="modal-sub">
+        <p class="brand">Meridian<span>TI</span></p>
+        <h2 id="modal-titulo">Bienvenido</h2>
+        <p class="modal-sub" id="modal-sub">Inicia sesión o regístrate para ver los servicios y usar el carrito.</p>
+
+        <div class="pestanas" role="tablist" aria-label="Acceso">
+          <button type="button" role="tab" id="tab-entrar" aria-controls="panel-entrar" aria-selected="true">Iniciar sesión</button>
+          <button type="button" role="tab" id="tab-registro" aria-controls="panel-registro" aria-selected="false" tabindex="-1">Registrarme</button>
+        </div>
+
+        <!-- Panel: iniciar sesión y recuperar contraseña -->
+        <div role="tabpanel" id="panel-entrar" aria-labelledby="tab-entrar">
+          <form class="form-sesion" id="form-entrar" novalidate>
+            <p class="ok" id="entrar-ok" role="status"></p>
+            <label>Usuario<input name="usuario" autocomplete="username" required></label>
+            <label>Contraseña<input name="clave" type="password" autocomplete="current-password" required></label>
+            <p class="err" role="alert"></p>
+            <button class="btn" type="submit">Entrar</button>
+            <button class="link-boton" type="button" data-pantalla="olvido-usuario">Olvidé mi contraseña</button>
+          </form>
+
+          <form class="form-sesion" id="form-olvido-usuario" novalidate hidden>
+            <h3>Recuperar contraseña</h3>
+            <label>Usuario<input name="usuario" autocomplete="username" required></label>
+            <p class="err" role="alert"></p>
+            <button class="btn" type="submit">Continuar</button>
+            <button class="link-boton" type="button" data-pantalla="entrar">← Volver a iniciar sesión</button>
+          </form>
+
+          <form class="form-sesion" id="form-olvido-respuesta" novalidate hidden>
+            <h3>Responde tu pregunta</h3>
+            <p class="pregunta" id="olvido-pregunta"></p>
+            <label>Respuesta<input name="respuesta" autocomplete="off" required></label>
+            <label>Contraseña nueva<input name="clave" type="password" autocomplete="new-password" minlength="8" required></label>
+            <div class="fuerza" data-fuerza aria-live="polite"><span class="fuerza-barra"><span></span></span><span class="fuerza-texto"></span></div>
+            <label>Confirmar contraseña<input name="confirmar" type="password" autocomplete="new-password" required></label>
+            <p class="err" role="alert"></p>
+            <button class="btn" type="submit">Guardar contraseña</button>
+            <button class="link-boton" type="button" data-pantalla="entrar">← Volver a iniciar sesión</button>
+          </form>
+        </div>
+
+        <!-- Panel: registro -->
+        <div role="tabpanel" id="panel-registro" aria-labelledby="tab-registro" hidden>
+          <div id="elegir-rol">
+            <p>¿Qué tipo de cuenta quieres crear?</p>
+            <div class="rol-botones">
+              <button type="button" class="rol" data-rol="admin">Administrador<small id="rol-admin-estado"></small></button>
+              <button type="button" class="rol" data-rol="usuario">Usuario<small>Clientes que contratan servicios.</small></button>
+            </div>
+          </div>
+
+          <div id="admin-existe" class="aviso" hidden>
+            <p>Ya hay un administrador registrado. Solo se permite uno, así que únicamente puede iniciar sesión.</p>
+            <button class="btn" type="button" data-pantalla="entrar">Ir a iniciar sesión</button>
+            <button class="link-boton" type="button" data-pantalla="elegir-rol">← Elegir otro tipo de cuenta</button>
+          </div>
+
+          <form class="form-sesion" id="form-registro" novalidate hidden>
+            <h3 id="registro-titulo">Crear cuenta</h3>
+            <p class="aviso" id="aviso-sin-admin" hidden>Aún no hay ningún administrador registrado.</p>
+            <label>Nombre de usuario<input name="usuario" autocomplete="username" required maxlength="20"><span class="ayuda">De 3 a 20 caracteres: letras, números, punto, guion o guion bajo.</span></label>
+            <label data-solo-usuario>Correo electrónico<input name="correo" type="email" autocomplete="email" required></label>
+            <label data-solo-usuario>WhatsApp (con lada de país)<input name="whatsapp" type="tel" autocomplete="tel" placeholder="528112345678" required><span class="ayuda">Solo números, con lada de país. Ej.: 52 81 1234 5678.</span></label>
+            <label>Contraseña<input name="clave" type="password" autocomplete="new-password" minlength="8" required><span class="ayuda">Mínimo 8 caracteres.</span></label>
+            <div class="fuerza" data-fuerza aria-live="polite"><span class="fuerza-barra"><span></span></span><span class="fuerza-texto"></span></div>
+            <label>Confirmar contraseña<input name="confirmar" type="password" autocomplete="new-password" required></label>
+            <label>Pregunta de recuperación<select name="pregunta" id="registro-pregunta" required></select></label>
+            <label>Respuesta<input name="respuesta" autocomplete="off" required></label>
+            <p class="err" role="alert"></p>
+            <button class="btn" type="submit">Crear cuenta</button>
+            <button class="link-boton" type="button" data-pantalla="elegir-rol">← Elegir otro tipo de cuenta</button>
+          </form>
+
+          <div id="hash-admin" class="hash-admin" hidden>
+            <h3>Administrador registrado</h3>
+            <p>Esta es la huella (hash PBKDF2-SHA256 con sal) de tu contraseña. <strong>Se muestra solo esta vez.</strong> La contraseña nunca se guarda en texto plano.</p>
+            <code id="hash-valor" class="hash-valor"></code>
+            <div class="actions">
+              <button class="btn btn-line btn-sm" type="button" id="hash-ver" aria-pressed="false">Ver hash</button>
+              <button class="btn btn-line btn-sm" type="button" id="hash-copiar">Copiar</button>
+              <span class="ok" id="hash-copiado" role="status"></span>
+            </div>
+            <button class="btn" type="button" id="hash-continuar">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aviso de arranque: estilos en línea a propósito, para que se vea aunque el CSS también venga viejo de la caché -->
+    <div id="aviso-carga" role="alert" hidden style="position:fixed;left:0;right:0;top:0;z-index:200;background:#1a1408;color:#ece7dc;border-bottom:2px solid #b8892b;padding:1rem 4%;font:500 .95rem/1.5 system-ui,sans-serif"></div>
+    <script>
+      // Guardia de arranque: si los módulos JS no terminan de iniciar (archivos viejos en caché o página abierta como file://), explica cómo resolverlo.
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          if (window.meridianListo) return;
+          var aviso = document.getElementById('aviso-carga');
+          aviso.innerHTML = location.protocol === 'file:'
+            ? '<strong>Abriste el archivo directamente.</strong> Este sitio necesita un servidor local: en la carpeta del proyecto haz doble clic en <code>iniciar-pagina.bat</code>; la página se abre sola en el navegador.'
+            : '<strong>La página no terminó de cargar.</strong> Lo más común es que el navegador esté usando archivos viejos guardados en caché. Presiona <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> (en Mac, <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) para recargar sin caché. Si sigue igual, abre la consola (F12) y revisa el error.';
+          aviso.hidden = false;
+        }, 300);
+      });
+    </script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

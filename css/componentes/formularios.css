@@ -1,0 +1,27 @@
+/* Formularios: contenedor, etiquetas, campos oscuros, ayudas, errores, avisos y tablas de datos. */
+form{background:var(--bg-2);color:var(--ink);padding:1.6rem;border:1px solid var(--line);border-radius:var(--r);display:grid;gap:1rem}
+form h2{font-size:1.6rem;margin:0}
+form h3{font-size:1.3rem;margin:0}
+label{display:grid;gap:.35rem;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;color:var(--ink);padding:.7rem;border:1px solid var(--line-2);border-radius:var(--r);background:var(--bg);width:100%}
+input::placeholder,textarea::placeholder{color:var(--tenue)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+input:disabled{opacity:.5}
+.opcional{color:var(--tenue);font-weight:400}
+.ayuda{font-size:.8rem;color:var(--tenue);font-weight:400}
+.err{color:var(--danger);margin:0;min-height:1.2em;font-size:.9rem}
+.ok{color:var(--ok);margin:0;font-size:.9rem}
+.ok:empty{display:none}
+.aviso{border:1px solid var(--line-2);border-left:3px solid var(--gold);background:var(--gold-tenue);padding:.8rem 1rem;border-radius:var(--r);margin:0;font-size:.92rem}
+.ph{color:var(--muted);border:1px dashed var(--line-2);border-radius:var(--r);padding:2rem;text-align:center}
+.error-carga{display:grid;gap:1rem;justify-items:center}
+.error-carga p{margin:0}
+
+/* Aviso fijo cuando el servidor o la base de datos no responden (por encima del modal de sesión) */
+.aviso-servidor{position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%);z-index:150;width:min(640px,calc(100% - 2rem));display:flex;gap:1rem;align-items:center;justify-content:space-between;background:var(--bg-3);border:1px solid var(--line-2);border-left:3px solid var(--danger);border-radius:var(--r);padding:.9rem 1rem;box-shadow:var(--sombra);font-size:.92rem}
+
+/* Tablas de datos (conceptos, usuarios) */
+.tabla-scroll{overflow-x:auto}
+.tabla{width:100%;border-collapse:collapse;font-size:.92rem}
+.tabla th{text-align:left;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line-2);padding:.6rem .5rem;white-space:nowrap}
+.tabla td{padding:.6rem .5rem;border-bottom:1px solid var(--line)}

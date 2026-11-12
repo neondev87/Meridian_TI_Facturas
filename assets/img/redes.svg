@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" stroke="#b8892b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ilustración de redes">
+<!-- Ilustración de redes: router central con antenas, señal Wi-Fi y nodos conectados. -->
+<rect x="96" y="70" width="48" height="24" rx="3"/>
+<path d="M106 82h4M116 82h4M126 82h4" stroke-width="2"/>
+<path d="M106 70l-4-14M134 70l4-14"/>
+<path d="M110 46a14 14 0 0 1 20 0M103 39a24 24 0 0 1 34 0" stroke-opacity=".7"/>
+<circle cx="40" cy="38" r="7"/><circle cx="200" cy="38" r="7"/>
+<circle cx="40" cy="124" r="7"/><circle cx="200" cy="124" r="7"/><circle cx="120" cy="138" r="7"/>
+<path d="M96 76L46 42M144 76l50-34M96 88l-50 32M144 88l50 32M120 94v37"/>
+<path d="M47 38h146M40 45v72M200 45v72M47 124h66M127 124h66" stroke-opacity=".3" stroke-dasharray="2 6"/>
+</svg>

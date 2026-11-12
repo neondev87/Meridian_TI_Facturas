@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" stroke="#b8892b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ilustración del paquete A la medida">
+<!-- Ilustración del paquete A la medida: sistema con panel, formulario y compás de diseño. -->
+<rect x="24" y="22" width="152" height="114" rx="4"/>
+<path d="M24 38h152"/>
+<circle cx="34" cy="30" r="2.4"/><circle cx="42" cy="30" r="2.4"/><circle cx="50" cy="30" r="2.4"/>
+<rect x="32" y="48" width="32" height="80" rx="1" stroke-opacity=".5"/>
+<path d="M38 58h20M38 68h16M38 78h20M38 88h14" stroke-opacity=".6"/>
+<rect x="74" y="50" width="94" height="11" rx="2"/>
+<rect x="74" y="68" width="94" height="11" rx="2"/>
+<rect x="74" y="86" width="94" height="22" rx="2" stroke-opacity=".6"/>
+<rect x="74" y="115" width="32" height="11" rx="2"/>
+<circle cx="204" cy="34" r="4"/>
+<path d="M202 38l-16 92M206 38l16 92M190 106h28"/>
+<path d="M180 136q24 12 48 0" stroke-opacity=".4" stroke-dasharray="2 4"/>
+</svg>

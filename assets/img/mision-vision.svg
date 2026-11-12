@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" stroke="#b8892b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ilustración de misión y visión">
+<!-- Ilustración de misión y visión: globo con meridianos y aguja de brújula. -->
+<circle cx="120" cy="80" r="56"/>
+<ellipse cx="120" cy="80" rx="22" ry="56" stroke-opacity=".55"/>
+<ellipse cx="120" cy="80" rx="42" ry="56" stroke-opacity=".35"/>
+<path d="M64 80h112M72 52h96M72 108h96" stroke-opacity=".4"/>
+<path d="M120 8l7 72-7 72-7-72z"/>
+<path d="M120 8l7 72h-14z" fill="#b8892b" fill-opacity=".25"/>
+<circle cx="120" cy="80" r="3.5"/>
+<path d="M30 80h20M190 80h20" />
+<circle cx="24" cy="80" r="1.6" fill="#b8892b"/><circle cx="216" cy="80" r="1.6" fill="#b8892b"/>
+</svg>

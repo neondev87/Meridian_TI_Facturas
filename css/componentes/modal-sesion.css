@@ -1,0 +1,43 @@
+/* Modal de registro e inicio de sesión: velo con desenfoque, caja centrada, pestañas, roles, fuerza de contraseña y hash. */
+.modal-sesion{position:fixed;inset:0;z-index:100;display:flex;padding:1rem;overflow-y:auto;background:var(--velo);-webkit-backdrop-filter:blur(8px) saturate(.7);backdrop-filter:blur(8px) saturate(.7)}
+body.sin-sesion{overflow:hidden}
+.modal-caja{margin:auto;width:min(470px,100%);background:var(--bg-2);border:1px solid var(--line-2);border-top:2px solid var(--gold);border-radius:var(--r);padding:clamp(1.3rem,4vw,2rem);box-shadow:var(--sombra)}
+.modal-caja .brand{display:inline-block;margin:0 0 1rem}
+.modal-caja h2{margin-bottom:.3rem}
+.modal-sub{color:var(--muted);font-size:.95rem}
+.modal-caja h3{font-size:1.2rem;margin:0}
+
+/* Pestañas */
+.pestanas{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line-2);margin:1.2rem 0}
+.pestanas button{background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:.7rem;font:500 .95rem "Public Sans",sans-serif;cursor:pointer;margin-bottom:-1px}
+.pestanas button[aria-selected="true"]{color:var(--gold-2);border-bottom-color:var(--gold)}
+
+/* Formularios del modal (sin caja propia) */
+.form-sesion{background:none;border:0;padding:0}
+
+/* Elegir tipo de cuenta */
+.rol-botones{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.rol{display:grid;gap:.3rem;text-align:left;background:var(--bg);border:1px solid var(--line-2);border-radius:var(--r);padding:1rem;color:var(--ink);font:600 1rem "Public Sans",sans-serif;cursor:pointer;transition:border-color .2s}
+.rol:hover{border-color:var(--gold)}
+.rol small{font-weight:400;font-size:.8rem;color:var(--muted)}
+#admin-existe{display:grid;gap:1rem}
+
+/* Indicador de fuerza */
+.fuerza{display:flex;align-items:center;gap:.7rem;font-size:.82rem;color:var(--muted);margin-top:-.4rem}
+.fuerza-barra{flex:1;height:4px;background:var(--line-2);border-radius:2px;overflow:hidden}
+.fuerza-barra span{display:block;height:100%;width:0;background:var(--danger);transition:width .2s}
+.fuerza[data-nivel="1"] .fuerza-barra span{width:20%}
+.fuerza[data-nivel="2"] .fuerza-barra span{width:40%;background:#d8a35a}
+.fuerza[data-nivel="3"] .fuerza-barra span{width:60%;background:var(--gold)}
+.fuerza[data-nivel="4"] .fuerza-barra span{width:80%;background:var(--ok)}
+.fuerza[data-nivel="5"] .fuerza-barra span{width:100%;background:var(--ok)}
+.pregunta{margin:0;color:var(--gold-2)}
+
+/* Hash del administrador */
+.hash-admin{display:grid;gap:1rem}
+.hash-admin p{margin:0;color:var(--muted);font-size:.92rem}
+.hash-valor{display:block;font:.85rem/1.5 ui-monospace,Consolas,monospace;background:var(--bg);border:1px solid var(--line-2);border-radius:var(--r);padding:.8rem;word-break:break-all;color:var(--gold-2)}
+.hash-valor.oculto{color:var(--tenue);letter-spacing:.1em}
+.hash-admin .actions{margin:0}
+
+@media(max-width:420px){.rol-botones{grid-template-columns:1fr}}

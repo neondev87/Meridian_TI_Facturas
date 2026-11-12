@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" stroke="#b8892b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ilustración de soporte y mantenimiento">
+<!-- Ilustración de soporte y mantenimiento: monitor con pulso de diagnóstico y engrane. -->
+<rect x="40" y="28" width="112" height="74" rx="3"/>
+<rect x="47" y="35" width="98" height="60" rx="1" stroke-opacity=".4"/>
+<path d="M86 102v14M106 102v14M72 118h48"/>
+<path d="M53 68h17l6-14 8 26 7-18 5 6h43" stroke-opacity=".85"/>
+<g transform="translate(176 96)">
+<circle r="15"/><circle r="5.5"/>
+<path d="M0-24v7M0 17v7M-24 0h7M17 0h7M-17-17l5 5M12 12l5 5M-17 17l5-5M12-12l5-5"/>
+</g>
+<path d="M18 136h204" stroke-opacity=".3"/>
+<circle cx="18" cy="136" r="1.6" fill="#b8892b"/><circle cx="222" cy="136" r="1.6" fill="#b8892b"/>
+</svg>

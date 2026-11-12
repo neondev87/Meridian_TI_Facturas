@@ -1,0 +1,26 @@
+/* Vista de detalle de servicio: barra con carrito, cabecera con ilustración y lista de subservicios con precio. */
+.vista-barra{position:sticky;top:var(--alto-barra);z-index:20;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 0;margin:-.8rem 0 1.2rem;background:var(--bg)}
+.servicio-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:2rem;align-items:start}
+.servicio-cabeza{display:grid;grid-template-columns:1fr 200px;gap:2rem;align-items:center;margin-bottom:2rem}
+.servicio-cabeza .lead{margin:0}
+
+.subservicios{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.subservicio{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:1.3rem 1.4rem;transition:border-color .2s}
+.subservicio:hover{border-color:var(--line-2)}
+.subservicio.con-img{grid-template-columns:150px 1fr auto}
+.subservicio h2{font-size:1.2rem;margin:0 0 .3rem}
+.subservicio p{margin:0;color:var(--muted);font-size:.93rem}
+.subservicio-compra{display:grid;gap:.6rem;justify-items:end;text-align:right}
+.subservicio .precio{font:500 1.45rem Newsreader,serif;color:var(--gold-2);white-space:nowrap}
+.precio span{display:block;font:400 .75rem "Public Sans",sans-serif;color:var(--tenue);letter-spacing:.04em}
+
+@media(max-width:1000px){
+ .servicio-layout{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .servicio-cabeza{grid-template-columns:1fr}
+ .servicio-cabeza img{max-width:180px}
+ .subservicio,.subservicio.con-img{grid-template-columns:1fr}
+ .subservicio.con-img img{max-width:150px}
+ .subservicio-compra{justify-items:start;text-align:left;grid-auto-flow:column;align-items:center;justify-content:space-between}
+}

@@ -1,0 +1,15 @@
+/* Vista Misión y visión: cabecera con eslogan, bloques de misión/visión y rejilla de empresas. */
+.mision-cabeza{display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:center;margin:1.5rem 0 2.5rem}
+.mision-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.mision-bloque{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--r);padding:1.6rem}
+.mision-bloque p{margin:0;color:var(--muted)}
+.empresas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.empresas li{background:var(--bg-2);padding:1.4rem 1.2rem;display:grid;gap:.2rem}
+.empresas strong{font:500 1.15rem Newsreader,serif}
+.empresas span{font-size:.8rem;color:var(--tenue);letter-spacing:.06em;text-transform:uppercase}
+.nota-ficticia{margin-top:1rem;font-size:.8rem;color:var(--tenue)}
+
+@media(max-width:760px){
+ .mision-cabeza,.mision-grid{grid-template-columns:1fr}
+ .mision-cabeza img{max-width:200px}
+}

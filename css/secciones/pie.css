@@ -1,0 +1,5 @@
+/* Pie de página: fondo negro, derechos reservados y enlace para volver arriba. */
+footer{background:var(--bg);border-top:1px solid var(--line);color:var(--tenue);padding:1.5rem 0;font-size:.9rem}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.foot a{color:var(--muted)}
+.foot a:hover{color:var(--gold-2)}

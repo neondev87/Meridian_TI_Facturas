@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" stroke="#b8892b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ilustración de sitios web y sistemas">
+<!-- Ilustración de sitios web y sistemas: ventana de navegador con maqueta de página. -->
+<rect x="30" y="24" width="180" height="112" rx="4"/>
+<path d="M30 40h180"/>
+<circle cx="40" cy="32" r="2.4"/><circle cx="48" cy="32" r="2.4"/><circle cx="56" cy="32" r="2.4"/>
+<rect x="72" y="28" width="104" height="8" rx="4" stroke-opacity=".45"/>
+<rect x="42" y="52" width="72" height="42" rx="1"/>
+<path d="M42 94l22-20 13 11 12-9 25 18" stroke-opacity=".7"/>
+<circle cx="98" cy="64" r="4" stroke-opacity=".7"/>
+<path d="M126 56h72M126 65h56M126 74h64" stroke-opacity=".7"/>
+<rect x="126" y="83" width="34" height="11" rx="2"/>
+<rect x="42" y="104" width="46" height="22" rx="1" stroke-opacity=".5"/><rect x="97" y="104" width="46" height="22" rx="1" stroke-opacity=".5"/><rect x="152" y="104" width="46" height="22" rx="1" stroke-opacity=".5"/>
+</svg>

@@ -1,0 +1,10 @@
+/* Tarjetas de servicio clicables con ilustración y lista de beneficios con borde dorado ("La factura va incluida"). */
+.card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;display:flex;flex-direction:column}
+.card-servicio{text-decoration:none;transition:border-color .2s,transform .2s,background .2s}
+.card-servicio:hover{border-color:var(--gold);background:var(--bg-3);transform:translateY(-3px)}
+.card-servicio img{width:100%;max-width:220px;margin:0 auto 1.2rem;aspect-ratio:3/2}
+.card-servicio p{color:var(--muted);font-size:.95rem}
+.card-mas{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line);color:var(--gold-2);font-weight:600;font-size:.92rem}
+
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:.8rem}
+.checks li{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--gold);padding:.9rem 1.1rem;border-radius:var(--r)}

@@ -1,0 +1,22 @@
+/* Reset base, contenedores de maquetación (wrap, secciones, split), vistas, foco visible y movimiento reducido. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--alto-barra) + 12px)}
+body{margin:0}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+.wrap{width:min(1120px,92%);margin:0 auto}
+.narrow{width:min(760px,92%)}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+[tabindex="-1"]:focus:not(:focus-visible){outline:0}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.sec{padding:clamp(3rem,7vw,5.5rem) 0}
+.alt{background:var(--bg-2);border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.split > *{min-width:0}
+
+@media(max-width:900px){
+ .split{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

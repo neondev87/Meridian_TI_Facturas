@@ -1,0 +1,20 @@
+/* Encabezado fijo: barra translúcida, marca, menú, datos del usuario con sesión y menú móvil. */
+.top{position:sticky;top:0;z-index:30;background:rgba(10,10,10,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:var(--alto-barra);gap:1rem}
+.brand{font:500 1.5rem Newsreader,serif;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--gold);margin-left:.15em}
+.menu{display:flex;align-items:center;gap:1.4rem}
+.menu a:not(.btn){text-decoration:none;font-weight:500;font-size:.92rem;color:var(--muted)}
+.menu a:not(.btn):hover,.menu a[aria-current="page"]:not(.btn){color:var(--gold-2)}
+.burger{display:none;background:none;color:var(--ink);border:1px solid var(--line-2);border-radius:var(--r);padding:.45rem .9rem;font:inherit;cursor:pointer}
+.usuario-barra{display:flex;align-items:center;gap:.6rem;padding-left:1.2rem;border-left:1px solid var(--line-2)}
+.usuario-nombre{font-size:.9rem;color:var(--ink);max-width:12ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.etiqueta-admin{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold-2);border-radius:999px;padding:.1rem .55rem}
+
+@media(max-width:1100px){
+ .burger{display:block}
+ .menu{display:none;position:absolute;top:var(--alto-barra);left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:1rem 4%}
+ .menu.open{display:flex}
+ .usuario-barra{padding:1rem 0 0;border-left:0;border-top:1px solid var(--line-2);width:100%}
+ .usuario-nombre{max-width:none}
+}
