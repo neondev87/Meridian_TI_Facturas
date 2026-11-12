@@ -1,0 +1,5 @@
+# Dependencias del backend de Meridian TI (versiones fijas; iniciar-pagina.bat las instala en venv/).
+# La base de datos es SQLite (módulo sqlite3 incluido en Python): no hace falta instalar ningún servidor.
+Flask==3.1.2
+Werkzeug==3.1.9
+python-dotenv==1.2.1
